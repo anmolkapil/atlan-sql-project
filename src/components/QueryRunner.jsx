@@ -4,20 +4,12 @@ function QueryRunner({
   queryName,
   setQueryName,
   query,
-  setQuery,
+  handleQueryReset,
   onRunQuery,
   loading,
 }) {
   const saveNewQuery = useAppStore((state) => state.saveNewQuery);
   const toggleFullScreen = useAppStore((state) => state.toggleFullScreen);
-
-  const handleQueryReset = () => {
-    const userConfirmed = window.confirm(
-      'Are you sure? you want to reset editor?'
-    );
-    if (!userConfirmed) return;
-    setQuery('');
-  };
 
   return (
     <div className='bg-gray-50 dark:bg-slate-800 flex justify-between items-center px-4 py-2 whitespace-nowrap'>
@@ -32,7 +24,7 @@ function QueryRunner({
         </button>
 
         <button
-          onClick={handleQueryReset}
+          onClick={() => handleQueryReset()}
           className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
         >
           <span className='material-symbols-outlined'>

@@ -20,6 +20,14 @@ function QueryPanel({ tabId, initialQueryName, initialQuery }) {
 
   const isActiveTab = activeTab === tabId;
 
+  const handleQueryReset = () => {
+    const userConfirmed = window.confirm(
+      'Are you sure? you want to reset editor?'
+    );
+    if (!userConfirmed) return;
+    setQuery(initialQuery);
+  };
+
   const handleRunQuery = async () => {
     setLoading(true);
 
@@ -67,6 +75,7 @@ function QueryPanel({ tabId, initialQueryName, initialQuery }) {
         query={query}
         setQuery={setQuery}
         loading={loading}
+        handleQueryReset={handleQueryReset}
       />
 
       <Split
