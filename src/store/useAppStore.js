@@ -18,7 +18,12 @@ const useAppStore = create((set) => ({
   tabCount: 2,
   activeTab: 1,
   tabs: [
-    { id: 1, title: 'Tab 1', queryName: '', query: 'SELECT * FROM customers;' },
+    {
+      id: 1,
+      title: 'Tab 1',
+      queryName: 'All Customers',
+      query: 'SELECT * FROM customers;',
+    },
   ],
   savedQueries: JSON.parse(localStorage.getItem('savedQueries')),
   toggleFullScreen: throttle(
