@@ -1,6 +1,7 @@
 import useAppStore from '../store/useAppStore';
+import { memo } from 'react';
 
-function DarkModeSwitch() {
+const DarkModeSwitch = memo(function DarkModeSwitch() {
   const darkMode = useAppStore((state) => state.darkMode);
   const toggleDarkMode = useAppStore((state) => state.toggleDarkMode);
 
@@ -14,6 +15,6 @@ function DarkModeSwitch() {
       </span>
     </div>
   );
-}
+});
 
 export default DarkModeSwitch;
