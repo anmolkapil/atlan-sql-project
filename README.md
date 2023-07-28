@@ -74,15 +74,8 @@ This project is a web application for executing and managing SQL queries. It pro
 
 ## Page Load Time Measurement
 
-Load Time: 316ms
-https://gtmetrix.com/reports/soft-fairy-3669ef.netlify.app/F79Kf1KI/
-
-The page load time was measured using gtmetrix
-
 ## Optimizations for Load Time and Performance
 
 - **Pagination for Query Results:** To avoid rendering a large number of table rows at once, Implemented pagination for query results. This ensures that only a limited number of rows are displayed at a time, improving page load and rendering performance.
 
 - **Debounced and Throttled Function Calls:** To optimize performance, Implemented both debouncing and throttling mechanisms for certain actions. For instance, when exporting data to CSV, used debouncing to ensure that the export function is called only once within a specified time period, preventing unnecessary repeated calls. Additionally, when adding new tabs, used throttling to limit the frequency of tab additions, ensuring a smoother user experience and preventing excessive tab creations.
-
-- **Lazy Loading of Resources:** For assets like images, fonts, and external scripts, we have utilized lazy loading techniques to defer loading until they are needed. This approach reduces the initial page load time and improves perceived performance for users.
