@@ -15,7 +15,7 @@ localStorage.setItem(
 const useAppStore = create((set) => ({
   fullScreen: true,
   darkMode: true,
-  tabCount: 2,
+  tabCount: 1,
   activeTab: 1,
   tabs: [
     {
