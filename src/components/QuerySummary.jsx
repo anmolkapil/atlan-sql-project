@@ -22,10 +22,9 @@ function QuerySummary({
             onClick={() => setSplitSize([100, 0])}
             className='material-symbols-outlined'
           >
-            expand_more
+            close
           </span>
         </button>
-
         <span className='mr-4'>Total Rows: {rowCount}</span>
         <span className='mr-4'>Execution Time: {formattedExecutionTime} s</span>
         <span className='mr-2'>Results per page: </span>
