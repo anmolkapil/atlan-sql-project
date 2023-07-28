@@ -81,6 +81,10 @@ Lighhouse Report:
 
 ## Optimizations for Performance
 
+- **State Management with Zustand:** Zustand is used for state management instead of the Context API. The primary reason for choosing Zustand is to address the issue of unnecessary rerenders caused by the Context API.
+  When using the Context API, any change to the context value will trigger a rerender for all components consuming that context, even if some of them don't depend on the updated state.
+  Zustand provides a more fine-grained approach to state management. It uses a shallow comparison to detect changes in state and triggers rerenders only for components that depend on the updated state. This means that components consuming Zustand state will be more efficient in terms of rendering, leading to improved performance.
+
 - **Pagination for Query Results:** To avoid rendering a large number of table rows at once, Implemented pagination for query results. This ensures that only a limited number of rows are displayed at a time, improving page load and rendering performance.
 
 - **Debounced and Throttled Function Calls:** To optimize performance, Implemented both debouncing and throttling mechanisms for certain actions. For instance, when exporting data to CSV, used debouncing to ensure that the export function is called only once within a specified time period, preventing unnecessary repeated calls. Additionally, when adding new tabs, used throttling to limit the frequency of tab additions, ensuring a smoother user experience and preventing excessive tab creations.
