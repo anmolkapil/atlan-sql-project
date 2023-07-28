@@ -14,7 +14,7 @@ function TableCollection({ table }) {
 
         <span className='font-bold tracking-wide'>{table.tableName}</span>
       </div>
-      <div className={hidden && 'hidden'}>
+      <div className={hidden ? 'hidden' : ''}>
         <ul className='border-l-2 border-gray-500/30 pl-4 ml-5'>
           {table.columns.map((column, index) => (
             <li className='text-sm tracking-wider mr-4' key={index}>
