@@ -74,6 +74,10 @@ This project is a web application for executing and managing SQL queries. It pro
 
 ## Page Load Time Measurement
 
+<img width="1093" alt="Lighthouse Screenshot" src="https://github.com/anmolkapil/atlan-sql-project/assets/71038519/131be9ff-c33a-443b-9610-e4b2ac49aa3e">
+
+<img width="1093" alt="Lighthouse Screenshot" src="https://github.com/anmolkapil/atlan-sql-project/assets/71038519/d4658a69-70d8-4152-8f38-72d7c3b4f0c1">
+
 ## Optimizations for Load Time and Performance
 
 - **Pagination for Query Results:** To avoid rendering a large number of table rows at once, Implemented pagination for query results. This ensures that only a limited number of rows are displayed at a time, improving page load and rendering performance.
