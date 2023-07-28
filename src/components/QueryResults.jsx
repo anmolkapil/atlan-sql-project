@@ -1,9 +1,8 @@
-import { useState } from 'react';
-
+import { useState, memo } from 'react';
 import QuerySummary from './QuerySummary';
 import Table from './Table';
 
-function QueryResults({
+const QueryResults = memo(function QueryResults({
   csvData,
   isLoading,
   executionTime,
@@ -75,6 +74,6 @@ function QueryResults({
       </div>
     </>
   );
-}
+});
 
 export default QueryResults;
