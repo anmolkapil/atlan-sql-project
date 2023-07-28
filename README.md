@@ -14,7 +14,7 @@ This project is a web application for executing and managing SQL queries. It pro
 
 2. **Query Editor**
 
-   - Description: The app includes a feature-rich SQL query editor powered by the `react-codemirror` library. It provides syntax highlighting, SQL suggestions, and a modern theme for an enhanced editing experience. The query editor comes with a convenient "Reset Code" button, allowing users to quickly clear the current query and start fresh without any previous content. This feature is helpful when users want to discard their current query and start working on a new one.
+   - Description: The app includes a feature-rich SQL query editor powered by the `react-codemirror` library. It provides syntax highlighting, SQL suggestions, and a modern theme for an enhanced editing experience. The query editor comes with a convenient "Reset Code" button, allowing users to quickly reset the current query to Initial Query.
 
 3. **Fullscreen Mode**
 
