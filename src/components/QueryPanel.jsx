@@ -10,12 +10,12 @@ import useAppStore from '../store/useAppStore';
 function QueryPanel({ tabId, initialQueryName, initialQuery }) {
   const fullScreen = useAppStore((store) => store.fullScreen);
   const activeTab = useAppStore((store) => store.activeTab);
-  const [queryName, setQueryName] = useState(initialQueryName);
+
   const [query, setQuery] = useState(initialQuery);
   const [loading, setLoading] = useState(false);
   const [csvData, setCSVData] = useState(null);
   const [executionTime, setExecutionTime] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
+
   const [splitSize, setSplitSize] = useState([100, 0]);
 
   const isActiveTab = activeTab === tabId;
@@ -33,7 +33,6 @@ function QueryPanel({ tabId, initialQueryName, initialQuery }) {
 
     //Fetching Demo Data
     try {
-      setCurrentPage(1);
       const startTime = performance.now();
       let tableName;
       if (query.toLowerCase().trim() === 'select * from customers;')
@@ -70,8 +69,7 @@ function QueryPanel({ tabId, initialQueryName, initialQuery }) {
     <div className={`${isActiveTab === false && 'hidden'}`}>
       <QueryRunner
         onRunQuery={handleRunQuery}
-        queryName={queryName}
-        setQueryName={setQueryName}
+        initialQueryName={initialQueryName}
         query={query}
         setQuery={setQuery}
         loading={loading}
@@ -93,8 +91,6 @@ function QueryPanel({ tabId, initialQueryName, initialQuery }) {
 
         <div className='overflow-auto relative dark:bg-slate-600'>
           <QueryResults
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
             csvData={csvData}
             isLoading={loading}
             executionTime={executionTime}

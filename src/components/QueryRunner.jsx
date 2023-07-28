@@ -1,13 +1,14 @@
+import { useState, memo } from 'react';
 import useAppStore from '../store/useAppStore';
 
-function QueryRunner({
-  queryName,
-  setQueryName,
+const QueryRunner = memo(function QueryRunner({
+  initialQueryName,
   query,
   handleQueryReset,
   onRunQuery,
   loading,
 }) {
+  const [queryName, setQueryName] = useState(initialQueryName);
   const saveNewQuery = useAppStore((state) => state.saveNewQuery);
   const toggleFullScreen = useAppStore((state) => state.toggleFullScreen);
 
@@ -57,5 +58,5 @@ function QueryRunner({
       </div>
     </div>
   );
-}
+});
 export default QueryRunner;

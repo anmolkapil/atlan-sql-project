@@ -1,9 +1,10 @@
+import { memo } from 'react';
 import ReactCodeMirror from '@uiw/react-codemirror';
 import { sql } from '@codemirror/lang-sql';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import useAppStore from '../store/useAppStore';
 
-function QueryEditor({ query, setQuery }) {
+const QueryEditor = memo(function QueryEditor({ query, setQuery }) {
   const darkMode = useAppStore((state) => state.darkMode);
 
   const handleQueryChange = (newQuery) => {
@@ -18,6 +19,6 @@ function QueryEditor({ query, setQuery }) {
       theme={darkMode ? githubDark : githubLight}
     />
   );
-}
+});
 
 export default QueryEditor;

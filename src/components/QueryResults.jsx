@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useState, memo, useEffect } from 'react';
 import QuerySummary from './QuerySummary';
 import Table from './Table';
 
@@ -6,12 +6,11 @@ const QueryResults = memo(function QueryResults({
   csvData,
   isLoading,
   executionTime,
-  currentPage,
-  setCurrentPage,
   setResultsOpen,
   setSplitSize,
 }) {
   const [resultsPerPage, setResultsPerPage] = useState(20);
+  const [currentPage, setCurrentPage] = useState(1);
   const totalPages = csvData ? Math.ceil(csvData.length / resultsPerPage) : 0;
   const currentResults = csvData
     ? csvData.slice(
@@ -19,6 +18,10 @@ const QueryResults = memo(function QueryResults({
         currentPage * resultsPerPage
       )
     : null;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [csvData]);
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
